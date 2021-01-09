@@ -2,14 +2,31 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "postinstall": "lerna bootstrap",
-    "build": "lerna exec -- npm run build",
-    "test": "lerna exec -- npm run test",
-    "lint": "lerna exec -- npm run lint",
-    "all:outdated": "npm outdated; lerna exec --no-bail -- npm outdated",
-    "all:upgrade": "npm upgrade; lerna exec --no-bail -- npm upgrade"
+    "build": "lerna run build",
+    "test": "lerna exec -- yarn test",
+    "lint": "eslint '*/**/*.ts' --report-unused-disable-directives",
+    "lint:fix": "eslint '*/**/*.ts' --fix",
+    "outdated:all": "yarn outdated",
+    "upgrade:all": "yarn upgrade-interactive --latest"
   },
+  "@typescript-eslint/eslint-plugin": "^4.1.0",
+  "@typescript-eslint/parser": "^4.1.0",
+  "resolutions": {
+    "**/aws-sdk": "2.739.0"
+  },
+  "workspaces": [
+    "examples/*",
+    "cdk-assume-role-plugin",
+    "cdk-multi-profile-plugin"
+  ],
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^24.0.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "lerna": "^3.22.1",
+    "prettier": "^2.1.1"
   }
 }

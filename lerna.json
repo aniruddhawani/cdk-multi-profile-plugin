@@ -1,10 +1,5 @@
 {
-  "npmClient": "npm",
-  "packages": [
-    "assume-role-example",
-    "cdk-assume-role-plugin",
-    "cdk-multi-profile-plugin",
-    "multi-profile-example"
-  ],
-  "version": "1.1.2"
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "1.2.1"
 }
